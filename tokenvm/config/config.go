@@ -8,9 +8,9 @@ import (
 	"strings"
 	"time"
 
-	"github.com/ava-labs/avalanchego/ids"
-	"github.com/ava-labs/avalanchego/utils/logging"
-	"github.com/ava-labs/avalanchego/utils/profiler"
+	"github.com/ava-labs/kaiago/ids"
+	"github.com/ava-labs/kaiago/utils/logging"
+	"github.com/ava-labs/kaiago/utils/profiler"
 	"github.com/ava-labs/hypersdk/config"
 	hconsts "github.com/ava-labs/hypersdk/consts"
 	"github.com/ava-labs/hypersdk/trace"
@@ -18,7 +18,7 @@ import (
 
 	"github.com/ava-labs/hypersdk/examples/tokenvm/consts"
 	"github.com/ava-labs/hypersdk/examples/tokenvm/utils"
-	"github.com/ava-labs/hypersdk/examples/tokenvm/version"
+	"github.com/ava-labs/hypersdk/examples/tokenvm/avalanchegoversion"
 )
 
 var _ vm.Config = (*Config)(nil)

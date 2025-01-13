@@ -4,8 +4,8 @@
 package registry
 
 import (
-	"github.com/ava-labs/avalanchego/utils/wrappers"
-	"github.com/ava-labs/avalanchego/vms/platformvm/warp"
+	"github.com/ava-labs/kaiago/utils/wrappers"
+	"github.com/ava-labs/kaiago/vms/platformvm/warp"
 	"github.com/ava-labs/hypersdk/chain"
 	"github.com/ava-labs/hypersdk/codec"
 
