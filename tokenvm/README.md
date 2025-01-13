@@ -4,12 +4,12 @@
 <p align="center">
   Mint, Transfer, and Trade User-Generated Tokens, All On-Chain
 </p>
-<p align="center">
+<!-- <p align="center">
   <a href="https://github.com/ava-labs/hypersdk/actions/workflows/tokenvm-static-analysis.yml"><img src="https://github.com/ava-labs/hypersdk/actions/workflows/tokenvm-static-analysis.yml/badge.svg" /></a>
   <a href="https://github.com/ava-labs/hypersdk/actions/workflows/tokenvm-unit-tests.yml"><img src="https://github.com/ava-labs/hypersdk/actions/workflows/tokenvm-unit-tests.yml/badge.svg" /></a>
   <a href="https://github.com/ava-labs/hypersdk/actions/workflows/tokenvm-sync-tests.yml"><img src="https://github.com/ava-labs/hypersdk/actions/workflows/tokenvm-sync-tests.yml/badge.svg" /></a>
   <a href="https://github.com/ava-labs/hypersdk/actions/workflows/tokenvm-load-tests.yml"><img src="https://github.com/ava-labs/hypersdk/actions/workflows/tokenvm-load-tests.yml/badge.svg" /></a>
-</p>
+</p> -->
 
 ---
 
@@ -105,7 +105,7 @@ be valid only until a particular time. This enables you to go for orders as you
 see fit at the time and not have to worry about your fill sitting around until you
 explicitly cancel it/replace it.
 
-### Avalanche Warp Support
+### kaia Warp Support
 We take advantage of the Avalanche Warp Messaging (AWM) support provided by the
 `hypersdk` to enable any `tokenvm` to send assets to any other `tokenvm` without
 relying on a trusted relayer or bridge (just the validators of the `tokenvm`
@@ -127,7 +127,7 @@ transfer an asset between two `tokenvms` A and B but you can't export from
 for an external `tokenvm` is always transparent and is never inherited
 implicitly by the transfers between other `tokenvms`. The ability to impose
 this restriction (without massively driving up the cost of each transfer) is
-possible because AWM does not impose an additional overhead per Subnet
+possible because AWM does not impose an additional overhead per kaia line
 connection (no "per connection" state to maintain). This means it is just as
 cheap/scalable to communicate with every other `tokenvm` as it is to only
 communicate with one.
@@ -176,7 +176,7 @@ Lastly, you'll need to add the chains you created and the default key to the
 ./build/token-cli chain import-anr
 ```
 
-_`chain import-anr` connects to the Avalanche Network Runner server running in
+_`chain import-anr` connects to the kaia Network Runner server running in
 the background and pulls the URIs of all nodes tracking each chain you
 created._
 
@@ -297,7 +297,7 @@ continue (y/n): y
 ✅ txID: uw9YrZcs4QQTEBSR3guVnzQTFyKKm5QFGVTvuGyntSTrx3aGm
 ```
 
-Note how all available orders for this pair are listed by the CLI (these come
+Note how all kaia orders for this pair are listed by the CLI (these come
 from the in-memory order book maintained by the `tokenvm`).
 
 #### Step 6: Close Order
@@ -348,9 +348,9 @@ height:15 txs:1 units:464 root:u2FyTtup4gwPfEFybMNTgL2svvSnajfGH4QKqiJ9vpZBSvx7q
 ✅ Lsad3MZ8i5V5hrGcRxXsghV5G1o1a9XStHY3bYmg7ha7W511e actor: token1rvzhmceq997zntgvravfagsks6w0ryud3rylh4cdvayry0dl97nsjzf3yp units: 464 summary (*actions.CloseOrder): [orderID: 2Qb172jGBtjTTLhrzYD8ZLatjg6FFmbiFSP6CBq2Xy4aBV2WxL]
 ```
 
-### Transfer Assets to Another Subnet
+### Transfer Assets to Another kaia line
 Unlike the mint and trade demo, the AWM demo only requires running a single
-command. You can kick off a transfer between the 2 Subnets you created by
+command. You can kick off a transfer between the 2 kaia line you created by
 running the following command from this location:
 ```bash
 ./build/token-cli action export
@@ -425,7 +425,7 @@ TRACE=true ./scripts/tests.load.sh
 
 When you are done, you can tear everything down by running the following
 command:
-```bash
+```bashkaia
 docker-compose -f trace/zipkin.yml down
 ```
 
@@ -433,12 +433,12 @@ docker-compose -f trace/zipkin.yml down
 _In the world of Avalanche, we refer to short-lived, test Subnets as Devnets._
 
 To programaticaly deploy `tokenvm` to a distributed cluster of nodes running on
-your own custom network or on Fuji, check out this [doc](DEVNETS.md).
+your own custom network or on kaia block chain, check out this [doc](DEVNETS.md).
 
 ## Future Work
 _If you want to take the lead on any of these items, please
 [start a discussion](https://github.com/ava-labs/hypersdk/discussions) or reach
-out on the Avalanche Discord._
+out on the 
 
 * Add more config options for determining which order books to store in-memory
 * Add option to CLI to fill up to some amount of an asset as long as it is
@@ -454,6 +454,4 @@ out on the Avalanche Discord._
 <br>
 <br>
 <br>
-<p align="center">
-  <a href="https://github.com/ava-labs/hypersdk"><img width="40%" alt="tokenvm" src="assets/hypersdk.png"></a>
-</p>
+
